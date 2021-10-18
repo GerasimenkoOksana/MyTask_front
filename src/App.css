@@ -36,3 +36,19 @@
     transform: rotate(360deg);
   }
 }
+.img-logo{
+  width: 40px;
+  height: auto;
+
+}
+.txtCarousel{
+  color: black;
+  top: 0;
+}
+.txtCarouselBottom{
+  color: black;
+
+}
+.formAuth{
+  background-color: bisque;
+}
