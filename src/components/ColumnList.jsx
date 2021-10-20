@@ -1,6 +1,10 @@
 import React from "react";
-import { Row} from "react-bootstrap";
+import {Row, Container} from "react-bootstrap";
 import Column from "./Column";
+
+const styleColumnList = {
+
+}
 
 export default class ColumnList extends React.Component {
 
@@ -117,12 +121,10 @@ export default class ColumnList extends React.Component {
             )
         )
         return (
-            <div>
-               <Row>
+               <Row className={styleColumnList}>
                 {column_list}
                 <Column create={this.Create.bind(this)} key={"newColumnElement"} item={null}></Column>
                </Row>
-            </div>
         );
     }
 

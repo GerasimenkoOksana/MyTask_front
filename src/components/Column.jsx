@@ -5,12 +5,14 @@ import imgEdit from '../images/edit3.png';
 import imgDel from '../images/del2.png';
 
 const styleCard = {
-    minWidth: '16rem',
-    maxWidth: '20rem',
-    backgroundColor: '#B0E0E6'
+    width: '18rem',
+    backgroundColor: '#B0E0E6',
+    borderRadius: '5px',
+    marginBottom: '10px'
 }
 const styleCardTitle = {
-    backgroundColor: '#4682B4'
+    backgroundColor: '#4682B4',
+    borderRadius: '5px'
 }
 
 export default class Column extends React.Component {
@@ -83,11 +85,16 @@ export default class Column extends React.Component {
 // Предложить созать форму
     renderNewElement() {
         return (
-            <Card className="card col-3" key="CreateNewElement">
-                <div className="card-body" onClick={this.openEditForm.bind(this)}>
-                    + add column
-                </div>
-            </Card>
+            <Col key="CreateNewElement">
+                <Card style={styleCard}>
+                    <Card.Body>
+                    <Card.Title style={styleCardTitle} onClick={this.openEditForm.bind(this)}>
+                        &emsp;&emsp;+ add new column
+                    </Card.Title>
+                    </Card.Body>
+                </Card>
+            </Col>
+
         );
     }
 

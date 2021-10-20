@@ -19,7 +19,7 @@ export default function NaviBar(isAuthenticated){
         password:''
     })
     const changeForm = event =>{
-        setForm({...form, [event.target.name]:event.target.value})
+        form[event.target.name]=event.target.value
         console.log('form:', form)
     }
     const clearForm = () =>{

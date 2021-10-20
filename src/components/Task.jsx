@@ -1,7 +1,8 @@
 import React from "react";
-import {Row, Button} from "react-bootstrap";
+import {Row, Button, Card} from "react-bootstrap";
 import imgEdit from '../images/edit3.png';
 import imgDel from '../images/del2.png';
+import '../App.css';
 
 export default class Task extends React.Component {
 
@@ -70,28 +71,29 @@ export default class Task extends React.Component {
 
     renderForm(){
         return(
-        <div className="card col-3" key="CreateNewElement">
-            <div className="card-body">
+        <Row key="CreateNewElement">
+            <Card>
+                <Row className="row-cols-6">
                 <input name="_id" type="hidden" value={this.state.item._id}/>
-                <input name="name" type="text"
+                <input className="col-8" name="name" type="text"
                        value={this.state.item.name}
                        onChange={this.onChange.bind(this)}/>
-                <input type="button" value="Cancel" onClick={this.cancelEditForm.bind(this)}/>
-                <input type="button" value="Save" onClick={this.saveEditForm.bind(this)}/>
-
-            </div>
-        </div>
+                <button type="button" className="btnCross" onClick={this.cancelEditForm.bind(this)}>&#10006; </button>
+                <button type="button" className="btnOk" onClick={this.saveEditForm.bind(this)}>&#10004;</button>
+                </Row>
+            </Card>
+        </Row>
         );
     }
 
     // Предложить созать форму
     renderNewElement(){
         return (
-            <div className="card col-3" key="CreateNewElement">
-                <div className="card-body" onClick={this.openEditForm.bind(this)}>
+            <Row className="row-cols-6" key="CreateNewElement">
+                <button className="btn-primary" onClick={this.openEditForm.bind(this)}>
                     +
-                </div>
-            </div>
+                </button>
+            </Row>
         );
     }
 
@@ -102,13 +104,15 @@ export default class Task extends React.Component {
     // Вывод основного состояния компонента
     renderData(){
         return (
-            <Row>
-                <div className="card-body" style={{paddingRight: '0'}}>
+            <Row className="containerDrop" >
+                <div className="cardDrug">
+                <div className="card-body" style={{paddingRight: '0'}} >
                     {this.state.item.name}
                 </div>
                 <div style={{display: 'flex', justifyContent: 'end'}}>
                     <Button variant="outline-primary" style={{padding: '0'}} size="sm" onClick={this.openEditForm.bind(this)}><img src={imgEdit} alt="edit"/></Button>
                     <Button variant="outline-danger" style={{padding: '0'}} size="sm" onClick={this.delete.bind(this)}><img src={imgDel} alt="del"/></Button>
+                </div>
                 </div>
                 <hr/>
             </Row>

@@ -52,3 +52,17 @@
 .formAuth{
   background-color: bisque;
 }
+button.btnCross:hover{
+  background-color:red;
+}
+button.btnOk:hover{
+  background-color:green;
+}
+.cardDrug{
+  margin: 0;
+  padding: 0;
+  cursor: grab;
+}
+.cardDrug:active{
+  cursor: grabbing;
+}
