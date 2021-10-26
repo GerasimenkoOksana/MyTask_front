@@ -26,7 +26,7 @@ export default class ColumnList extends React.Component {
 
     Create(item){
        /* item.user_id = this.props.user_id;*/
-        fetch("http://localhost:3030/api/column",
+        fetch("https://herasymenkotasks.azurewebsites.net/api/column",
             {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
@@ -47,7 +47,7 @@ export default class ColumnList extends React.Component {
     Read (){
         console.log("Start get data:");
        // fetch("http://localhost:3030/api/column/" + this.props.user_id) // читать колонки текущего пользователя
-        fetch("http://localhost:3030/api/column" ) // временно читать все колонки
+        fetch("https://herasymenkotasks.azurewebsites.net/api/column" ) // временно читать все колонки
             .then(response => response.json())
             .then(data => {
                 console.log("getData:");
@@ -62,7 +62,7 @@ export default class ColumnList extends React.Component {
 
     Update(item) {
        // item.user_id = this.props.user_id;
-        fetch("http://localhost:3030/api/column",
+        fetch("https://herasymenkotasks.azurewebsites.net/api/column",
             {
                 method: 'PUT',
                 headers: {'Content-Type': 'application/json'},
@@ -89,7 +89,7 @@ export default class ColumnList extends React.Component {
             isLoaded: true,
             items: items
         });
-        fetch("http://localhost:3030/api/column",
+        fetch("https://herasymenkotasks.azurewebsites.net/api/column",
             {
                 method: 'DELETE',
                 headers: {'Content-Type': 'application/json'},

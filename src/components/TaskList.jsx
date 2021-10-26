@@ -19,7 +19,7 @@ export default class TaskList extends React.Component {
 
     Create(item){
         item.column_id = this.props.column_id;
-        fetch("http://localhost:3030/api/task",
+        fetch("https://herasymenkotasks.azurewebsites.net/api/task",
             {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
@@ -39,7 +39,7 @@ export default class TaskList extends React.Component {
 
     Read (){
         console.log("Start get data:");
-        fetch("http://localhost:3030/api/task/byColumnID/" + this.props.column_id) // Читать только колонки с открытой доски
+        fetch("https://herasymenkotasks.azurewebsites.net/api/task/byColumnID/" + this.props.column_id) // Читать только колонки с открытой доски
             .then(response => response.json())
             .then(data => {
                 console.log("getData:");
@@ -54,7 +54,7 @@ export default class TaskList extends React.Component {
 
     Update(item) {
         item.column_id = this.props.column_id;
-        fetch("http://localhost:3030/api/task",
+        fetch("https://herasymenkotasks.azurewebsites.net/api/task",
             {
                 method: 'PUT',
                 headers: {'Content-Type': 'application/json'},
@@ -82,7 +82,7 @@ export default class TaskList extends React.Component {
             isLoaded: true,
             items: items
         });
-        fetch("http://localhost:3030/api/column",
+        fetch("https://herasymenkotasks.azurewebsites.net/api/column",
             {
                 method: 'DELETE',
                 headers: {'Content-Type': 'application/json'},
